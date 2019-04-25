@@ -5,15 +5,17 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server",
-    "dev": "nodemon  dev server"
+    "dev": "cross-env PGUSER=postgres PGHOST=localhost PGPASSWORD='root' PGDATABASE=grocery_list PGPORT=5432 nodemon server",
+    "start": "node server"
   },
   "author": "mohammed yousuf",
   "license": "ISC",
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "nodemon": "^1.18.11"
   },
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "pg": "^7.10.0"
   }
 }
